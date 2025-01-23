@@ -67,22 +67,17 @@ const ContactFormComponent = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
         if (validateForm()) {
-            fetch('http://localhost:5000/api/contact', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify(formData),
-            })
-            .then((response) => response.json())
-            .then((data) => {
-                console.log('Success:', data);
-                window.location.reload();
-            })
-            .catch((error) => {
-                console.error('Error:', error);
+            console.log('Form submitted successfully:', formData);
+            alert('Form submitted successfully!');
+            setFormData({
+                name: '',
+                lastName: '',
+                phone: '',
+                email: '',
+                message: ''
             });
-        }        
+            setErrors({});
+        }
     };
 
     return (

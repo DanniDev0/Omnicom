@@ -32,7 +32,7 @@ export const Home = () => {
       <div className="typewriter">
         <span id="typed"></span>
       </div>
-      <Description text="OCRE is a micro-enterprise dedicated to offering integrated solutions in electricity, air conditioning (HVAC), renewable energy, and energy efficiency. With successful projects in Colombia and Virginia, we are looking to expand our operations and secure financing for new projects." />
+      <Description text="Welcome to Omnicom CR Enterprises LLC! We are your trusted partner for electrical and HVAC solutions in Virginia. SWaM certified and committed to excellence. 📞 Contact us today for more information." />
       <div className='animated fadeInUp'>
         <Link to="/about_us">
           <Button text="Get to Know Us More" />
