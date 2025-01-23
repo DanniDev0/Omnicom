@@ -1,0 +1,133 @@
+.contact-us {
+    padding: 50px;
+    border-radius: 16px;
+    width: 600px;
+    height: 525px;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.25);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(8.5px);
+    -webkit-backdrop-filter: blur(8.5px);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    transition: all 0.3s ease-in-out;
+}
+
+.contact-us:hover {
+    box-shadow: 0 12px 48px rgba(0, 0, 0, 0.35);
+}
+
+h2 {
+    margin-bottom: 20px;
+    color: #1a73e8;
+    font-family: 'Poppins', sans-serif;
+    font-size: 2.5rem;
+    position: relative;
+    animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.form-group {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.input-container {
+    position: relative;
+    width: 48%;
+    margin-bottom: 30px;
+}
+
+.input-container.full-width {
+    width: 100%;
+}
+
+.input-container i {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #1a73e8;
+    font-size: 20px;
+}
+
+.input-container input {
+    width: 100%;
+    padding: 12px 12px 12px 40px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    background-color: #f0f0f0;
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.1);
+    font-size: 18px;
+    transition: border-color 0.3s ease, background-color 0.3s ease;
+}
+
+.input-container input:focus {
+    outline: none;
+    background-color: #e9e9e9;
+    border-color: #007bff;
+}
+
+.input-container label {
+    position: absolute;
+    left: 40px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 18px;
+    color: #999;
+    pointer-events: none;
+    transition: all 0.3s ease;
+}
+
+.input-container input:focus ~ label,
+.input-container input:not(:placeholder-shown) ~ label {
+    top: -10px;
+    transform: translateY(-100%);
+    font-size: 14px;
+    color: #4285f4;
+}
+
+.error-message {
+    color: red;
+    font-size: 14px;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 2;
+    margin-top: 5px;
+    line-height: 1;
+}
+
+@media (max-width: 767px) {
+    .contact-us {
+        width: 90%;
+        padding: 20px;
+        height: auto;
+    }
+
+    .form-group {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .input-container {
+        width: 100%;
+    }
+}

@@ -1,0 +1,11 @@
+.animate-container {
+    padding-top: 100px;
+    text-align: center;
+}
+
+.three-columns {
+    display: flex;
+    justify-content: center;
+    align-items: stretch; 
+    padding: 0 20px;
+}

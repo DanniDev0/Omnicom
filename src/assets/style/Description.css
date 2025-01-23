@@ -1,0 +1,28 @@
+.description-container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    text-align: center;
+}
+
+@media (max-width: 1024px) {
+    .description-container {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .description-container {
+        padding: 15px;
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .description-container {
+        padding: 10px;
+        font-size: 0.9rem;
+    }
+}

@@ -1,0 +1,154 @@
+.animate-container {
+    padding-top: 100px;
+    text-align: center;
+}
+
+.container {
+    padding: 20px;
+    gap: 20px;
+    display: flex;
+    justify-content: center;
+    max-width: 70%; 
+    flex-wrap: wrap;
+    margin: 0 auto;
+}
+
+
+.info-company {
+    display: flex;
+    justify-content: center;
+    margin: 20px;
+    flex-wrap: wrap;
+    gap: 15px; 
+}
+
+.block, .map, .contact-form {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+
+@media (min-width: 1400px) {
+    .container {
+        padding: 35px;
+        gap: 35px;
+    }
+
+    .info-company {
+        margin: 35px;
+    }
+
+    h3, p {
+        font-size: 1.3rem;
+    }
+
+    .map, .contact-form {
+        max-width: 600px; 
+    }
+}
+
+@media (min-width: 1200px) {
+    .animate-container {
+        padding-top: 120px;
+    }
+
+    .container {
+        padding: 30px;
+        gap: 30px;
+    }
+
+    .info-company {
+        margin: 30px;
+    }
+
+    h3, p {
+        font-size: 1.2rem;
+    }
+
+    .map, .contact-form {
+        max-width: 800px; 
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 768px) {
+    .animate-container {
+        padding-top: 60px;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    .container {
+        padding: 10px;
+        gap: 10px;
+    }
+
+    .info-company {
+        margin: 10px;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+
+    h3, p {
+        font-size: 0.9rem;
+    }
+
+    .map, .contact-form {
+        width: 100%;
+        max-width: 100%;
+        margin: 0 auto; 
+        flex-direction: column;
+    }
+
+    .map {
+        height: 300px; 
+    }
+
+    .contact-form input, .contact-form button {
+        width: 100%; 
+        margin: 5px 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .animate-container {
+        padding-top: 50px;
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+
+    .container {
+        padding: 5px;
+        gap: 5px;
+    }
+
+    .info-company {
+        margin: 5px;
+    }
+
+    h3, p {
+        font-size: 0.8rem;
+    }
+}
+
+@media (max-width: 320px) {
+    .animate-container {
+        padding-top: 30px;  
+    }
+
+    .container {
+        padding: 5px;
+        gap: 5px;
+    }
+
+    .info-company {
+        margin: 5px;
+    }
+
+    h3, p {
+        font-size: 0.7rem;
+    }
+}

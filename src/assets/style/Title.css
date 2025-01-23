@@ -1,0 +1,47 @@
+.title-container {
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 40px;
+    font-size: 8rem;
+    font-weight: 900;
+    margin: 0 auto;
+    text-shadow:
+        0 0 5px rgba(255, 255, 0, 1),
+        0 0 10px rgba(255, 255, 0, 1),
+        0 0 20px rgba(255, 255, 0, 1),
+        0 0 40px rgba(255, 217, 0, 1),
+        0 0 80px rgba(255, 217, 0, 1),
+        0 0 90px rgba(255, 217, 0, 1),
+        0 0 100px rgba(255, 217, 0, 1),
+        0 0 140px rgba(255, 217, 0, 1);
+}
+
+h1.animate__pulse {
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+}
+
+@media (max-width: 1024px) {
+    .title-container {
+        font-size: 6rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .title-container {
+        font-size: 5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .title-container {
+        font-size: 4rem;
+    }
+}
+
+@media (max-width: 380px) {
+    .title-container {
+        font-size: 3rem;
+    }
+}

@@ -1,0 +1,136 @@
+.no-internet-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f8f9fa;
+    padding: 80px 250px;
+    box-sizing: border-box;
+}
+
+.no-internet-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    margin-right: 20px; 
+    flex: 1;
+}
+
+.no-internet-gif {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.no-internet-gif img {
+    width: 80%;
+    max-width: 600px;
+    min-width: 400px;
+    height: auto;
+}
+
+.no-internet-content h1 {
+    font-size: 7rem;
+    margin: 0;
+    color: #ff4757;
+    text-shadow:
+        0 0 5px rgba(255, 255, 0, 1),
+        0 0 10px rgba(255, 255, 0, 1),
+        0 0 20px rgba(255, 255, 0, 1),
+        0 0 40px rgba(255, 217, 0, 1),
+        0 0 80px rgba(255, 217, 0, 1),
+        0 0 90px rgba(255, 217, 0, 1),
+        0 0 100px rgba(255, 217, 0, 1),
+        0 0 140px rgba(255, 217, 0, 1);
+    animation: float 4s ease-in-out infinite;
+    white-space: normal; 
+    text-align: left;
+    line-height: 1.2; 
+}
+
+.no-internet-content p {
+    font-size: 2rem;
+    margin: 20px 0;
+    color: #343a40;
+}
+
+.retry-button {
+    margin-top: 20px;
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    .no-internet-container {
+        padding: 60px 150px;
+    }
+
+    .no-internet-content h1 {
+        font-size: 5rem;
+    }
+
+    .no-internet-content p {
+        font-size: 1.5rem;
+    }
+}
+
+@media (min-width: 1025px) and (max-width: 1400px) {
+    .no-internet-container {
+        padding: 40px 100px;
+    }
+
+    .no-internet-content h1 {
+        font-size: 6rem; 
+    }
+
+    .no-internet-content p {
+        font-size: 1.8rem;
+    }
+
+    .no-internet-gif img {
+        max-width: 500px;
+    }
+}
+
+@media (max-width: 768px) {
+    .no-internet-container {
+        padding: 20px 20px;
+        flex-direction: column;
+        justify-content: flex-start;
+    }
+
+    .no-internet-content {
+        align-items: center;
+        text-align: center;
+        margin-right: 0;
+    }
+
+    .no-internet-gif {
+        margin-top: 20px;
+    }
+
+    .no-internet-gif img {
+        width: 100%;
+        max-width: 400px;
+    }
+
+    .no-internet-content h1 {
+        font-size: 3.5rem;
+        word-wrap: break-word; 
+        line-height: 1.1; 
+        justify-content: center;
+    }
+
+    .no-internet-content p {
+        font-size: 1.2rem;
+    }
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+}

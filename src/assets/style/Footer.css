@@ -1,0 +1,135 @@
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+    box-shadow: 0px -5px 10px 5px #000;
+    margin-top: 50px;
+}
+
+.footer-content {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.social-contact {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.social-media {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+.social-icon {
+    margin: 0 10px;
+    display: inline-block;
+    font-size: 24px;
+    transition: transform 0.3s ease;
+}
+
+.social-icon img {
+    width: 24px;
+    height: 24px;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.social-icon:hover img {
+    transform: scale(1.2);
+}
+
+.contact-info {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    padding-right: 50px;
+}
+
+.contact-info i {
+    transition: transform 0.3s ease, text-shadow 0.3s ease;
+}
+
+.contact-info i:hover {
+    transform: scale(1.2);
+    text-shadow: 0px 2px 5px rgba(255, 255, 255, 0.9);
+}
+
+.email {
+    margin-right: 5px;
+}
+
+.phone {
+    margin-left: 5px;
+}
+
+.separator {
+    margin: 0 10px;
+    font-weight: bold;
+}
+
+.footer-content p {
+    margin-top: 10px;
+}
+
+.email i,
+.phone i {
+    margin: 0 10px;
+}
+
+@media (max-width: 768px) {
+    .footer-content {
+        max-width: 90%;
+        padding: 0 10px;
+    }
+
+    .footer-content p {
+        font-size: 0.8rem;
+    }
+
+    .social-contact {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .contact-info {
+        flex-direction: column;
+        font-size: 16px;
+        align-items: center;
+        padding-left: 70px;
+    }
+
+    .contact-info i,
+    .separator {
+        display: none;
+    }
+
+    .email,
+    .phone {
+        margin: 5px 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .contact-info {
+        font-size: 14px;
+    }
+
+    .footer-content p {
+        font-size: 0.8rem;
+    }
+
+    .social-icon img {
+        width: 20px;
+        height: 20px;
+    }
+}

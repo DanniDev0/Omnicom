@@ -1,0 +1,62 @@
+.animate-container {
+    padding-top: 100px;
+    text-align: center;
+}
+
+.typewriter {
+    font-size: 2rem;
+    color: #000000;
+    font-family: sans-serif;
+    max-width: 100%;
+    min-height: 60px;
+    line-height: 1.2;
+    overflow: hidden;
+    margin-top: 30px;
+    margin-bottom: 10px;
+}
+
+@media (max-width: 1024px) {
+    .animate-container {
+        padding-top: 75px;
+    }
+
+    .typewriter {
+        font-size: 1.8rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .animate-container {
+        padding-top: 50px;
+    }
+
+    .typewriter {
+        font-size: 1.5rem;
+        height: 40px;
+        line-height: 40px;
+    }
+}
+
+@media (max-width: 480px) {
+    .animate-container {
+        padding-top: 50px;
+    }
+
+    .typewriter {
+        font-size: 1.3rem;
+        min-height: 70px;
+        line-height: 1.4;
+    }
+}
+
+@media (max-width: 380px) {
+    .animate-container {
+        padding-top: 20px;
+    }
+
+    .typewriter {
+        font-size: 1.2rem;
+        min-height: 60px;
+        line-height: 1.5;
+    }
+}

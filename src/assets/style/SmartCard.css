@@ -1,0 +1,49 @@
+.smart-card {
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    font-family: sans-serif;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 1.5rem;
+    width: 18rem;
+    max-width: 100%;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.smart-card::before {
+    content: '';
+    position: absolute;
+    height: 4px;
+    width: 0;
+    background-color: #00796b;
+    top: 0;
+    left: 0;
+    transition: width 0.4s ease;
+}
+
+.smart-card:hover::before {
+    width: 100%;
+}
+
+.smart-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.smart-card h4 {
+    color: #333;
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+}
+
+.smart-card p {
+    color: #555;
+    font-size: 1rem;
+    margin-bottom: 0.75rem;
+    text-align: left;
+}
+
+.smart-card p strong {
+    color: #00796b;
+}
