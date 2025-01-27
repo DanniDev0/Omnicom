@@ -1,14 +1,15 @@
 import React from 'react'
 import Title from '../components/Title'
 import Description from '../components/Description';
-import ObjectiveSection from '../components/ObjectiveSection';
 import CardTeam from '../components/CardTeam';
+import ImageHover from '../components/ImageHover';
 import Freddy from '../assets/img/Freddy.jpg'
 import Jose from '../assets/img/Jose.jpg'
 import Titleh2 from '../components/Titleh2'
-import misionImg from '../assets/img/mision.jpg';
-import visionImg from '../assets/img/vision.jpg';
+import MisionImg from '../assets/img/Mision.jpg';
+import VisionImg from '../assets/img/Vision.jpg';
 import '../assets/style/About_us.css'
+
 
 
 export const About_us = () => {
@@ -19,21 +20,18 @@ export const About_us = () => {
                 <Description text="Omnicom CR Enterprises (OCRE) is an innovative company specializing in providing comprehensive solutions in construction, energy efficiency, renewable energy, general electricity, air conditioning, plumbing and sanitation, cleaning, maintenance and gardening, and specialized personnel supply. Founded by experts with over 15 years of experience in both Colombia and the United States, Omnicom combines local and international knowledge to deliver high-quality services and customized solutions to its clients." />
             </section>
             <section className="objetivos">
-                <ObjectiveSection
-                    title="MISSION"
-                    text="Our mission is to empower communities and businesses through innovative and sustainable solutions, improving quality of life and promoting a greener environment."
-                    imgSrc={misionImg}
-                    animationTitle="animate__pulse"
-                    animationText="animate__fadeInLeft"
-                    animationImg="animate__fadeInLeft"
+                <ImageHover 
+                    Image={VisionImg}
+                    Name="Vision"
+                    Title="VISION"
+                    Text="We aspire to be leaders in the sector, recognized for our ability to deliver high-quality projects that integrate technology, sustainability, and social responsibility, expanding both nationally and internationally."
                 />
-                <ObjectiveSection
-                    title="VISION"
-                    text="We aspire to be leaders in the sector, recognized for our ability to deliver high-quality projects that integrate technology, sustainability, and social responsibility, expanding both nationally and internationally."
-                    imgSrc={visionImg}
-                    animationTitle="animate__pulse"
-                    animationText="animate__fadeInRight"
-                    animationImg="animate__fadeInRight"
+                <ImageHover 
+                    Image={MisionImg}
+                    Name="Mision"
+                    Title="MISSION"
+                    Text="MISSION
+                    Our mission is to empower communities and businesses through innovative and sustainable solutions, improving quality of life and promoting a greener environment."
                 />
             </section>
             <section>
