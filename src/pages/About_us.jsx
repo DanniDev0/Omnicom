@@ -10,8 +10,6 @@ import MisionImg from '../assets/img/Mision.jpg';
 import VisionImg from '../assets/img/Vision.jpg';
 import '../assets/style/About_us.css'
 
-
-
 export const About_us = () => {
     return (
         <div>
@@ -30,8 +28,7 @@ export const About_us = () => {
                     Image={MisionImg}
                     Name="Mision"
                     Title="MISSION"
-                    Text="MISSION
-                    Our mission is to empower communities and businesses through innovative and sustainable solutions, improving quality of life and promoting a greener environment."
+                    Text="Our mission is to empower communities and businesses through innovative and sustainable solutions, improving quality of life and promoting a greener environment."
                 />
             </section>
             <section>
@@ -51,7 +48,6 @@ export const About_us = () => {
                     />
                 </div>
             </section>
-
         </div>
     )
 }
