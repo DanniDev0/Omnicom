@@ -1,135 +1,74 @@
-footer {
-    background-color: #333;
+.footer {
+    background-color: #1c1c1c;
     color: #fff;
-    text-align: center;
-    padding: 20px 0;
-    box-shadow: 0px -5px 10px 5px #000;
-    margin-top: 50px;
+    padding: 30px 90px;
 }
 
-.footer-content {
-    max-width: 800px;
+.footer-container {
+    max-width: 1400px;
     margin: 0 auto;
-    padding: 0 10px;
     display: flex;
-    flex-direction: column;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 100px;
+}
+
+.footer-contact {
+    flex: 1;
+    min-width: 250px;
+}
+
+.footer-item {
+    display: flex;
     align-items: center;
-}
-
-.social-contact {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-bottom: 10px;
-}
-
-.social-media {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 10px;
-}
-
-.social-icon {
-    margin: 0 10px;
-    display: inline-block;
-    font-size: 24px;
+    gap: 10px;
+    margin-bottom: 15px;
     transition: transform 0.3s ease;
 }
 
-.social-icon img {
-    width: 24px;
-    height: 24px;
-    display: block;
-    transition: transform 0.3s ease;
+.footer-item:hover {
+    transform: scale(1.04);
 }
 
-.social-icon:hover img {
-    transform: scale(1.2);
+.footer-about {
+    flex: 1;
+    min-width: 250px;
 }
 
-.contact-info {
+.footer-about h3 {
+    margin-bottom: 20px;
+}
+
+.footer-about p {
+    margin-bottom: 10px;
+    max-width: 450px;
+}
+
+.footer-social {
     display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 18px;
-    padding-right: 50px;
+    gap: 20px;
 }
 
-.contact-info i {
-    transition: transform 0.3s ease, text-shadow 0.3s ease;
+.footer-social a {
+    transition: transform 0.5s ease;
 }
 
-.contact-info i:hover {
-    transform: scale(1.2);
-    text-shadow: 0px 2px 5px rgba(255, 255, 255, 0.9);
+.linkedin:hover {
+    transform: scale(1.1);
+    box-shadow: 0px 0px 20px rgba(10, 102, 194, 0.8);
 }
 
-.email {
-    margin-right: 5px;
+.facebook:hover {
+    transform: scale(1.1);
+    box-shadow: 0px 0px 20px rgba(24, 119, 242, 0.8);
 }
 
-.phone {
-    margin-left: 5px;
+.instagram:hover {
+    transform: scale(1.1);
+    box-shadow: 0px 0px 20px rgba(225, 48, 108, 0.8);
 }
 
-.separator {
-    margin: 0 10px;
-    font-weight: bold;
-}
-
-.footer-content p {
-    margin-top: 10px;
-}
-
-.email i,
-.phone i {
-    margin: 0 10px;
-}
-
-@media (max-width: 768px) {
-    .footer-content {
-        max-width: 90%;
-        padding: 0 10px;
-    }
-
-    .footer-content p {
-        font-size: 0.8rem;
-    }
-
-    .social-contact {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .contact-info {
-        flex-direction: column;
-        font-size: 16px;
-        align-items: center;
-        padding-left: 70px;
-    }
-
-    .contact-info i,
-    .separator {
-        display: none;
-    }
-
-    .email,
-    .phone {
-        margin: 5px 0;
-    }
-}
-
-@media (max-width: 480px) {
-    .contact-info {
-        font-size: 14px;
-    }
-
-    .footer-content p {
-        font-size: 0.8rem;
-    }
-
-    .social-icon img {
-        width: 20px;
-        height: 20px;
-    }
+.x:hover {
+    transform: scale(1.1);
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.8);
 }

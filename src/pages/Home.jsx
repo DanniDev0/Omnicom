@@ -32,7 +32,7 @@ export const Home = () => {
       <div className="typewriter">
         <span id="typed"></span>
       </div>
-      <Description text="Welcome to Omnicom CR Enterprises LLC! We are your trusted partner for electrical and HVAC solutions in Virginia. SWaM certified and committed to excellence. 📞 Contact us today for more information." />
+      <Description text="Welcome to Omnicom, your trusted partner in electrical and HVAC services. We specialize in installations, maintenance, and sustainable solutions tailored to your needs. Contact us to bring your project to life with quality and professionalism." />
       <div className='animated fadeInUp'>
         <Link to="/about_us">
           <Button text="Get to Know Us More" />
