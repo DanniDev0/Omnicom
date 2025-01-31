@@ -68,3 +68,12 @@
     justify-content: center;
     padding: 2rem;
 }
+
+.values-section{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+    justify-content: center;
+    align-items: start;
+    max-width: 80%; 
+    margin: 50px auto;
+}

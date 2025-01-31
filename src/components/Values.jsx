@@ -1,14 +1,17 @@
 import React from 'react';
 import '../assets/style/Values.css';
+import Verificacion from '../assets/img/Verificacion.png';
 
-export const Values = ({ Title, Parrafo, Image }) => {
+export const Values = ({ Title, Parrafo }) => {
     return (
-        <div className="value-item animate__animated animate__zoomInDown">
-            <div className="value-content">
-                <h3>{Title}</h3>
-                <p>{Parrafo}</p>
+        <div>
+            <div className="values-container">
+                <img src={Verificacion} alt="Icono" />
+                <div className="values-content">
+                    <h3>{Title}</h3>
+                    <p>{Parrafo}</p>
+                </div>
             </div>
-            <img src={Image} alt={Title} className="value-image" />
         </div>
     );
 };
