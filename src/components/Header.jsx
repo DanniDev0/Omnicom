@@ -49,11 +49,12 @@ export const Header = () => {
             <nav className={`nav ${isOpen ? 'open' : ''}`} ref={menuRef}>
                 <ul className="nav-links">
                     <li><Link to="/" onClick={closeMenu}>Home</Link></li>
-                    <li><Link to="/about_us" onClick={closeMenu}>About Us</Link></li>
-                    <li><Link to="/services" onClick={closeMenu}>Services</Link></li>
-                    <li><Link to="/projects" onClick={closeMenu}>Projects</Link></li>
-                    <li><Link to="/market_analysis" onClick={closeMenu}>Market Analysis</Link></li>
-                    <li><Link to="/contact_us" onClick={closeMenu}>Contact Us</Link></li>
+                    <li><Link to="/About_us" onClick={closeMenu}>About Us</Link></li>
+                    <li><Link to="/Services" onClick={closeMenu}>Services</Link></li>
+                    <li><Link to="/Projects" onClick={closeMenu}>Projects</Link></li>
+                    <li><Link to="/Market_Analysis" onClick={closeMenu}>Market Analysis</Link></li>
+                    <li><Link to="/Certificates" onClick={closeMenu}>Certificates</Link></li>
+                    <li><Link to="/Contact_us" onClick={closeMenu}>Contact Us</Link></li>
                 </ul>
             </nav>
         </header>
