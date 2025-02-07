@@ -13,13 +13,6 @@
     margin: 0 auto;
 }
 
-.info-company {
-    display: flex;
-    justify-content: center;
-    margin: 20px;
-    flex-wrap: wrap;
-    gap: 15px;
-}
 
 .block, .map, .contact-form {
     width: 100%;
@@ -31,10 +24,6 @@
     .container {
         padding: 30px;
         gap: 30px;
-    }
-
-    .info-company {
-        margin: 30px;
     }
 
     h3, p {
@@ -54,13 +43,6 @@
     .container {
         padding: 10px;
         gap: 10px;
-    }
-
-    .info-company {
-        margin: 10px;
-        flex-direction: column;
-        align-items: center;
-        gap: 20px;
     }
 
     h3, p {
@@ -94,10 +76,6 @@
         gap: 5px;
     }
 
-    .info-company {
-        margin: 5px;
-    }
-
     h3, p {
         font-size: 0.8rem;
     }
@@ -111,10 +89,6 @@
     .container {
         padding: 5px;
         gap: 5px;
-    }
-
-    .info-company {
-        margin: 5px;
     }
 
     h3, p {
