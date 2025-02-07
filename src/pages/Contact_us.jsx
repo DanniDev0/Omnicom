@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 import Title from '../components/Title';
 import '../assets/style/Contact_us.css';
 import MapComponent from '../components/MapComponent';
@@ -28,7 +28,7 @@ export const Contact_us = () => {
                 </div>
             </section>
         </div>
-    )
+    );
 }
 
 export default Contact_us;

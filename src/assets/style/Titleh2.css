@@ -7,7 +7,6 @@
     position: relative;
 }
 
-/* Estilo del título */
 .secondary-title {
     font-size: 60px;
     font-weight: 800;
@@ -22,7 +21,6 @@
     animation: fadeIn 1s ease-out;
 }
 
-/* Línea decorativa completa */
 .underline {
     width: 100%;
     max-width: 400px;
@@ -32,7 +30,6 @@
     border-radius: 10px;
 }
 
-/* Animación de entrada */
 @keyframes fadeIn {
     0% {
         opacity: 0;
@@ -44,7 +41,6 @@
     }
 }
 
-/* RESPONSIVE */
 @media (max-width: 768px) {
     .secondary-title {
         font-size: 40px;

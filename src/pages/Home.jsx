@@ -27,13 +27,13 @@ export const Home = () => {
   });
 
   return (
-    <section className="animate-container">
+    <section className="home-container">
       <Title text="OMNICOM" />
       <div className="typewriter">
         <span id="typed"></span>
       </div>
       <Description text="Welcome to Omnicom, your trusted partner in electrical and HVAC services. We specialize in installations, maintenance, and sustainable solutions tailored to your needs. Contact us to bring your project to life with quality and professionalism." />
-      <div className='animated fadeInUp'>
+      <div className="btn-container">
         <Link to="/about_us">
           <Button text="Get to Know Us More" />
         </Link>

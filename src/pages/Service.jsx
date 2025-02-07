@@ -12,14 +12,14 @@ import Values from '../components/Values';
 export const Service = () => {
   return (
     <div>
-      <section className="animate-container">
+      <section className="service-section">
         <Title text="SERVICES" />
-        <div className="services-container">
+        <div className="service-card-wrapper">
           <ServiceCard
-            title='General Electricity'
-            description='Electrical installations, maintenance and repairs.'
+            title="General Electricity"
+            description="Electrical installations, maintenance and repairs."
             image={GeneralElectricity}
-            alt='General Electricity'
+            alt="General Electricity"
           />
           <ServiceCard
             title="HVAC"
@@ -28,13 +28,13 @@ export const Service = () => {
             alt="HVAC"
           />
           <ServiceCard
-            title="Renewable energy"
+            title="Renewable Energy"
             description="Implementation of solar systems and other renewable sources."
             image={RenewableEnergy}
             alt="Renewable energy"
           />
           <ServiceCard
-            title="Energy efficiency"
+            title="Energy Efficiency"
             description="Energy efficiency evaluations and improvements."
             image={EnergyEfficiency}
             alt="Energy efficiency"
@@ -42,33 +42,33 @@ export const Service = () => {
         </div>
       </section>
       
-      <section>
+      <section className="value-section">
         <Titleh2 text="Values" />
-        <div className="values-section">
-        <Values
-          Title="Innovation"
-          Parrafo="We embrace new technologies and practices to provide efficient and advanced solutions."
-        />
-        <Values
-          Title="Sustainability"
-          Parrafo="Committed to the environment, we aim to reduce the ecological impact of our projects."
-        />
-        <Values
-          Title="Quality"
-          Parrafo="We ensure excellence in every project, guaranteeing total customer satisfaction"
-        />
-        <Values
-          Title="Integrity"
-          Parrafo="We operate with honesty and transparency in all our business relationships."
-        />
-        <Values
-          Title="Collaboration"
-          Parrafo="We work together with clients, partners, and communities to achieve common goals"
-        />
-        <Values
-          Title="Responsability"
-          Parrafo="we always work hard to develop a perfect job and give you great satisfaction."
-        />
+        <div className="value-card-wrapper">
+          <Values
+            Title="Innovation"
+            Parrafo="We embrace new technologies and practices to provide efficient and advanced solutions."
+          />
+          <Values
+            Title="Sustainability"
+            Parrafo="Committed to the environment, we aim to reduce the ecological impact of our projects."
+          />
+          <Values
+            Title="Quality"
+            Parrafo="We ensure excellence in every project, guaranteeing total customer satisfaction."
+          />
+          <Values
+            Title="Integrity"
+            Parrafo="We operate with honesty and transparency in all our business relationships."
+          />
+          <Values
+            Title="Collaboration"
+            Parrafo="We work together with clients, partners, and communities to achieve common goals."
+          />
+          <Values
+            Title="Responsibility"
+            Parrafo="We always work hard to develop a perfect job and give you great satisfaction."
+          />
         </div>
       </section>
     </div>

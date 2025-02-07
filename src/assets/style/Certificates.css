@@ -1,4 +1,35 @@
-.animate-container {
-    padding-top: 100px;
+.certificates-page {
+    background-color: #f9f9f9;
+    padding: 50px 10px;
     text-align: center;
+}
+
+.certificates-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 0;
+}
+
+.certificates-header h1 {
+    font-size: 6rem;
+    white-space: nowrap;
+}
+
+@media (max-width: 768px) {
+    .certificates-header h1 {
+        font-size: 4rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .certificates-header h1 {
+        font-size: 3rem;
+    }
+}
+
+@media (max-width: 320px) {
+    .certificates-header h1 {
+        font-size: 2rem;
+    }
 }

@@ -1,6 +1,6 @@
 .animate-container {
-    padding-top: 100px;
     text-align: center;
+    padding: 20px;
 }
 
 .container {
@@ -8,18 +8,17 @@
     gap: 20px;
     display: flex;
     justify-content: center;
-    max-width: 70%; 
+    max-width: 70%;
     flex-wrap: wrap;
     margin: 0 auto;
 }
-
 
 .info-company {
     display: flex;
     justify-content: center;
     margin: 20px;
     flex-wrap: wrap;
-    gap: 15px; 
+    gap: 15px;
 }
 
 .block, .map, .contact-form {
@@ -28,31 +27,7 @@
     box-sizing: border-box;
 }
 
-
-@media (min-width: 1400px) {
-    .container {
-        padding: 35px;
-        gap: 35px;
-    }
-
-    .info-company {
-        margin: 35px;
-    }
-
-    h3, p {
-        font-size: 1.3rem;
-    }
-
-    .map, .contact-form {
-        max-width: 600px; 
-    }
-}
-
 @media (min-width: 1200px) {
-    .animate-container {
-        padding-top: 120px;
-    }
-
     .container {
         padding: 30px;
         gap: 30px;
@@ -67,17 +42,13 @@
     }
 
     .map, .contact-form {
-        max-width: 800px; 
-        display: flex;
-        flex-direction: column;
+        max-width: 800px;
     }
 }
 
 @media (max-width: 768px) {
     .animate-container {
-        padding-top: 60px;
-        padding-left: 10px;
-        padding-right: 10px;
+        padding: 40px 10px;
     }
 
     .container {
@@ -99,25 +70,23 @@
     .map, .contact-form {
         width: 100%;
         max-width: 100%;
-        margin: 0 auto; 
+        margin: 0 auto;
         flex-direction: column;
     }
 
     .map {
-        height: 300px; 
+        height: 300px;
     }
 
     .contact-form input, .contact-form button {
-        width: 100%; 
+        width: 100%;
         margin: 5px 0;
     }
 }
 
 @media (max-width: 480px) {
     .animate-container {
-        padding-top: 50px;
-        padding-left: 5px;
-        padding-right: 5px;
+        padding: 30px 5px;
     }
 
     .container {
@@ -136,7 +105,7 @@
 
 @media (max-width: 320px) {
     .animate-container {
-        padding-top: 30px;  
+        padding-top: 20px;
     }
 
     .container {
