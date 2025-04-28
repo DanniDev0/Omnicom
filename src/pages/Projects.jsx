@@ -1,6 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
 import '../assets/style/Projects.css';
 import Title from '../components/Title';
+import Titleh2 from '../components/Titleh2';
+import ButtonPrice from '../components/ButtonPrice';
 import { CardProjects } from '../components/CardProjects';
 import Project1 from '../assets/img/Project1.jpg';
 import Project2 from '../assets/img/Project2.jpg';
@@ -8,68 +10,51 @@ import Project3 from '../assets/img/Project3.jpg';
 import Project4 from '../assets/img/Project4.jpg';
 import Project5 from '../assets/img/Project5.jpg';
 import Project6 from '../assets/img/Project6.jpg';
-import Project7 from '../assets/img/Project7.jpg';
-import Project8 from '../assets/img/Project8.jpg';
-import Project9 from '../assets/img/Project9.jpg';
-import Project10 from '../assets/img/Project10.jpg';
 
 export const Projects = () => {
+    const [lightboxImage, setLightboxImage] = useState(null);
+    const [zoomed, setZoomed] = useState(false);
+
+    const toggleZoom = (e) => {
+        e.stopPropagation(); 
+        setZoomed(!zoomed);
+    };
+
+    const openLightbox = (image) => {
+        setLightboxImage(image);
+    };
+
+    const closeLightbox = () => {
+        setLightboxImage(null);
+    };
+
     return (
         <section className="projects-section">
             <div className="projects-container">
                 <Title text="PROJECTS" />
+                <Titleh2 text="Electrical installation residential" />
                 <div className="projects-grid">
-                    <CardProjects
-                        Image={Project1}
-                        Title="Electrical Installation"
-                        Description="We perform complete electrical installations for residential and commercial buildings, ensuring safe and efficient operation."
-                    />
-                    <CardProjects
-                        Image={Project2}
-                        Title="Electrical Maintenance"
-                        Description="We offer preventive and corrective maintenance services for electrical systems, guaranteeing their optimal performance and durability."
-                    />
-                    <CardProjects
-                        Image={Project3}
-                        Title="Solar Panels"
-                        Description="We install solar energy systems to help reduce electricity costs and promote the use of renewable energy."
-                    />
-                    <CardProjects
-                        Image={Project4}
-                        Title="Heating Systems"
-                        Description="Installation and maintenance of heating systems to ensure a comfortable and warm environment during the cold months."
-                    />
-                    <CardProjects
-                        Image={Project5}
-                        Title="Electrical Networks"
-                        Description="We design and construct electrical networks for buildings and complexes, ensuring an efficient and safe distribution of energy."
-                    />
-                    <CardProjects
-                        Image={Project6}
-                        Title="Panel Maintenance"
-                        Description="Cleaning and maintenance services for solar panels, optimizing their performance and extending their useful life."
-                    />
-                    <CardProjects
-                        Image={Project7}
-                        Title="Air Conditioning"
-                        Description="Installation and maintenance of air conditioning systems to ensure a cool and comfortable environment all year round."
-                    />
-                    <CardProjects
-                        Image={Project8}
-                        Title="Wind Energy"
-                        Description="We implement wind energy systems to harness wind as a sustainable source of renewable energy."
-                    />
-                    <CardProjects
-                        Image={Project9}
-                        Title="Energy Efficiency"
-                        Description="We evaluate and improve the energy efficiency of buildings and systems to reduce energy consumption and costs."
-                    />
-                    <CardProjects
-                        Image={Project10}
-                        Title="Clean Energy"
-                        Description="We develop clean energy solutions to promote a sustainable future and reduce environmental impact."
-                    />
+                    <CardProjects Image={Project1} description="Power Up with Confidence Expert installation and upgrades of electrical panels for safe and efficient energy distribution. Professional. Compliant. Guaranteed." onClick={() => openLightbox(Project1)} />
+                    <CardProjects Image={Project2} description="Comfort and Style, Installed Right Ceiling fan installations that enhance airflow, lighting, and energy efficiency — done with precision and care." onClick={() => openLightbox(Project2)} />
+                    <CardProjects Image={Project3} description="Bright, Fresh, and Quiet Bathroom exhaust fan installations that improve air circulation and lighting — for a more comfortable and mold-free environment." onClick={() => openLightbox(Project3)} />
+                    <CardProjects Image={Project4} description="Safe & Code-Compliant Electrical Service Upgrades We replace and upgrade your exterior electrical service for maximum safety, performance, and utility compliance." onClick={() => openLightbox(Project4)} />
+                    <CardProjects Image={Project5} description="In Progress: Precision Electrical Service Installation Upgrading your home’s main service with care, code compliance, and quality materials — from start to finish." onClick={() => openLightbox(Project5)} />
+                    <CardProjects Image={Project6} description="Elevate Your Space with Elegant Lighting We install modern, stylish light fixtures that transform your rooms into warm, inviting spaces — with precision and safety." onClick={() => openLightbox(Project6)} />
                 </div>
+                <div className="button">
+                    <ButtonPrice Text="Request your Quote" page="/Contact_us" />
+                </div>
+
+                {lightboxImage && (
+                    <div className="lightbox" onClick={closeLightbox}>
+                        <img 
+                            src={lightboxImage} 
+                            alt="Project" 
+                            className={`lightbox-image ${zoomed ? 'zoomed' : ''}`}  
+                            onClick={toggleZoom}
+                        />
+                    </div>
+                )}
             </div>
         </section>
     );

@@ -8,15 +8,15 @@
 .project-item {
     background-color: #f8f9fa;
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border: 1px solid #c4c4c4;
     overflow: hidden;
-    transition: transform 0.3s, box-shadow 0.3s;
-    height: 450px;
+    transition: transform 0.5s, box-shadow 0.5s;
+    height: auto;
 }
 
 .project-item:hover {
     transform: translateY(-10px);
-    box-shadow: 0px 0px 15px 5px #fff;
+    box-shadow: 0px 0px 15px 1px #000000;
 }
 
 .project-image {
@@ -29,16 +29,11 @@
     padding: 20px;
 }
 
-.project-title {
-    font-size: 1.75rem;
-    margin-bottom: 15px;
-    color: #333;
-}
-
 .project-description {
     font-size: 1.125rem;
     color: #555;
 }
+
 
 @media (max-width: 768px) {
     .project-grid {
@@ -53,10 +48,6 @@
 
     .project-image {
         height: 200px;
-    }
-
-    .project-title {
-        font-size: 1.5rem;
     }
 
     .project-description {
@@ -78,10 +69,6 @@
 
     .project-image {
         height: 180px;
-    }
-
-    .project-title {
-        font-size: 1.25rem;
     }
 
     .project-description {
