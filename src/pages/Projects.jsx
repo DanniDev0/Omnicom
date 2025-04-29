@@ -41,10 +41,7 @@ export const Projects = () => {
                     <CardProjects Image={Project5} description="In Progress: Precision Electrical Service Installation Upgrading your home’s main service with care, code compliance, and quality materials — from start to finish." onClick={() => openLightbox(Project5)} />
                     <CardProjects Image={Project6} description="Elevate Your Space with Elegant Lighting We install modern, stylish light fixtures that transform your rooms into warm, inviting spaces — with precision and safety." onClick={() => openLightbox(Project6)} />
                 </div>
-                <div className="button">
-                    <ButtonPrice Text="Request your Quote" page="/Contact_us" />
-                </div>
-
+                <ButtonPrice Text="Request your Quote" page="/Contact_us" />
                 {lightboxImage && (
                     <div className="lightbox" onClick={closeLightbox}>
                         <img 

@@ -1,12 +1,13 @@
-import React from 'react'
-import '../assets/style/ButtonPrice.css'
+import React from 'react';
+import { Link } from 'react-router-dom';
+import '../assets/style/ButtonPrice.css';
 
-const ButtonPrice = ( { Text, page } ) => {
+const ButtonPrice = ({ Text, page }) => {
   return (
     <div className='btn-price'>
-        <a href={page}>
-          <span>{Text}</span>
-        </a>    
+      <Link to={page}>
+        <span>{Text}</span>
+      </Link>    
     </div>
   )
 }
