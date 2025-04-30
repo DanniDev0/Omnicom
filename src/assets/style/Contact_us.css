@@ -1,97 +1,105 @@
 .animate-container {
-    text-align: center;
-    padding: 20px;
+  text-align: center;
+  padding: 20px;
 }
 
 .container {
-    padding: 20px;
-    gap: 20px;
-    display: flex;
-    justify-content: center;
-    max-width: 70%;
-    flex-wrap: wrap;
-    margin: 0 auto;
+  padding: 20px;
+  gap: 20px;
+  display: flex;
+  justify-content: center;
+  max-width: 70%;
+  flex-wrap: wrap;
+  margin: 0 auto;
 }
 
-
-.block, .map, .contact-form {
-    width: 100%;
-    max-width: 100%;
-    box-sizing: border-box;
+.block,
+.map,
+.contact-form {
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
 }
 
 @media (min-width: 1200px) {
-    .container {
-        padding: 30px;
-        gap: 30px;
-    }
+  .container {
+    padding: 30px;
+    gap: 30px;
+  }
 
-    h3, p {
-        font-size: 1.2rem;
-    }
+  h3,
+  p {
+    font-size: 1.2rem;
+  }
 
-    .map, .contact-form {
-        max-width: 800px;
-    }
+  .map,
+  .contact-form {
+    max-width: 800px;
+  }
 }
 
 @media (max-width: 768px) {
-    .animate-container {
-        padding: 40px 10px;
-    }
+  .animate-container {
+    padding: 40px 10px;
+  }
 
-    .container {
-        padding: 10px;
-        gap: 10px;
-    }
+  .container {
+    padding: 10px;
+    gap: 10px;
+  }
 
-    h3, p {
-        font-size: 0.9rem;
-    }
+  h3,
+  p {
+    font-size: 0.9rem;
+  }
 
-    .map, .contact-form {
-        width: 100%;
-        max-width: 100%;
-        margin: 0 auto;
-        flex-direction: column;
-    }
+  .map,
+  .contact-form {
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+    flex-direction: column;
+  }
 
-    .map {
-        height: 300px;
-    }
+  .map {
+    height: 300px;
+  }
 
-    .contact-form input, .contact-form button {
-        width: 100%;
-        margin: 5px 0;
-    }
+  .contact-form input,
+  .contact-form button {
+    width: 100%;
+    margin: 5px 0;
+  }
 }
 
 @media (max-width: 480px) {
-    .animate-container {
-        padding: 30px 5px;
-    }
+  .animate-container {
+    padding: 30px 5px;
+  }
 
-    .container {
-        padding: 5px;
-        gap: 5px;
-    }
+  .container {
+    padding: 5px;
+    gap: 5px;
+  }
 
-    h3, p {
-        font-size: 0.8rem;
-    }
+  h3,
+  p {
+    font-size: 0.8rem;
+  }
 }
 
 @media (max-width: 320px) {
-    .animate-container {
-        padding-top: 20px;
-    }
+  .animate-container {
+    padding-top: 20px;
+  }
 
-    .container {
-        padding: 5px;
-        gap: 5px;
-    }
+  .container {
+    padding: 5px;
+    gap: 5px;
+  }
 
-    h3, p {
-        font-size: 0.7rem;
-    }
+  h3,
+  p {
+    font-size: 0.7rem;
+  }
 }

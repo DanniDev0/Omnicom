@@ -1,162 +1,318 @@
-import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import React, { useEffect } from 'react';
+import Swal from 'sweetalert2';
 import '../assets/style/ContactFormComponent.css';
-import Button from '../components/Button';
 
 const ContactFormComponent = () => {
-    const [formData, setFormData] = useState({
-        name: '',
-        lastName: '',
-        phone: '',
-        email: '',
-        message: ''
-    });
-    const [errors, setErrors] = useState({});
-    const navigate = useNavigate();
-
-    const validateForm = () => {
-        let formErrors = {};
-
-        if (!formData.name.trim()) {
-            formErrors.name = 'Name is required';
-        } else if (formData.name.length < 2) {
-            formErrors.name = 'Name must be at least 2 characters';
-        } else if (!/^[A-Za-z\s]+$/.test(formData.name)) {
-            formErrors.name = 'Name can only contain letters';
-        }
-
-        if (!formData.lastName.trim()) {
-            formErrors.lastName = 'Last Name is required';
-        } else if (formData.lastName.length < 2) {
-            formErrors.lastName = 'Last Name must be at least 2 characters';
-        } else if (!/^[A-Za-z\s]+$/.test(formData.lastName)) {
-            formErrors.lastName = 'Last Name can only contain letters';
-        }
-
-        if (!formData.phone.trim()) {
-            formErrors.phone = 'Phone is required';
-        } else if (!/^\d{10}$/.test(formData.phone)) {
-            formErrors.phone = 'Phone must be a valid 10-digit number';
-        }
-
-        if (!formData.email.trim()) {
-            formErrors.email = 'Email is required';
-        } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
-            formErrors.email = 'Email must be a valid email address';
-        }
-
-        if (!formData.message.trim()) {
-            formErrors.message = 'Message is required';
-        } else if (formData.message.length < 10) {
-            formErrors.message = 'Message must be at least 10 characters';
-        }
-
-        setErrors(formErrors);
-
-        return Object.keys(formErrors).length === 0;
+  useEffect(() => {
+    const changeLanguage = (lang) => {
+      if (lang === 'es') {
+        document.getElementById('es-content').style.display = 'block';
+        document.getElementById('en-content').style.display = 'none';
+        document.getElementById('es-btn').classList.add('active');
+        document.getElementById('en-btn').classList.remove('active');
+      } else {
+        document.getElementById('es-content').style.display = 'none';
+        document.getElementById('en-content').style.display = 'block';
+        document.getElementById('es-btn').classList.remove('active');
+        document.getElementById('en-btn').classList.add('active');
+      }
     };
 
-    const handleInputChange = (e) => {
-        const { name, value } = e.target;
-        setFormData((prevData) => ({
-            ...prevData,
-            [name]: value,
-        }));
-    };
+    const setupForm = (formId, langValue) => {
+      const form = document.getElementById(formId);
+      if (!form) return;
 
-    const handleSubmit = (e) => {
+      const inputs = form.querySelectorAll('input, select');
+
+      inputs.forEach((input) => {
+        input.addEventListener('input', () => {
+          validateField(input);
+        });
+      });
+
+      form.addEventListener('submit', function (e) {
         e.preventDefault();
-        if (validateForm()) {
-            console.log('Form submitted successfully:', formData);
-            alert('Form submitted successfully!');
-            setFormData({
-                name: '',
-                lastName: '',
-                phone: '',
-                email: '',
-                message: ''
-            });
-            setErrors({});
+
+        let isValid = true;
+
+        inputs.forEach((input) => {
+          if (!validateField(input)) {
+            isValid = false;
+          }
+        });
+
+        if (!isValid) {
+          Swal.fire({
+            icon: 'error',
+            title: langValue === 'español' ? 'Error en el formulario' : 'Form Error',
+            text: langValue === 'español'
+              ? 'Por favor, corrige los errores en el formulario.'
+              : 'Please correct the errors in the form.',
+          });
+          return;
         }
+
+        const formData = {
+          nombre: form.querySelector('[name="nombre"]').value,
+          telefono: form.querySelector('[name="telefono"]').value,
+          email: form.querySelector('[name="email"]').value,
+          servicio: form.querySelector('[name="servicio"]').value,
+          idioma: langValue,
+        };
+
+        const webhookUrl = 'PEGAR_AQUI_SU_URL_DE_WEBHOOK';
+
+        fetch(webhookUrl, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(formData),
+        })
+          .then((response) => {
+            if (response.ok) {
+              Swal.fire({
+                icon: 'success',
+                title: langValue === 'español' ? '¡Éxito!' : 'Success!',
+                text: langValue === 'español'
+                  ? 'Su solicitud ha sido enviada correctamente.'
+                  : 'Your request has been successfully submitted.',
+              });
+              form.reset();
+              inputs.forEach((input) => {
+                input.classList.remove('is-valid', 'is-invalid');
+                const error = input.parentElement.querySelector('.error-message');
+                if (error) error.textContent = '';
+              });
+            } else {
+              Swal.fire({
+                icon: 'error',
+                title: langValue === 'español' ? 'Error' : 'Error',
+                text: langValue === 'español'
+                  ? 'Hubo un problema al enviar su solicitud. Por favor, intente nuevamente.'
+                  : 'There was a problem submitting your request. Please try again.',
+              });
+            }
+          })
+          .catch((error) => {
+            console.error('Error:', error);
+            Swal.fire({
+              icon: 'error',
+              title: langValue === 'español' ? 'Error' : 'Error',
+              text: langValue === 'español'
+                ? 'Hubo un problema al enviar su solicitud. Por favor, intente nuevamente.'
+                : 'There was a problem submitting your request. Please try again.',
+            });
+          });
+      });
     };
 
-    return (
-        <div className="contact-us">
-            <h2>we call you?</h2>
-            <form onSubmit={handleSubmit}>
-                <div className="form-group">
-                    <div className="input-container">
-                        <i className="fas fa-user"></i>
-                        <input 
-                            type="text" 
-                            id="name" 
-                            name="name" 
-                            placeholder="Name"
-                            value={formData.name}
-                            onChange={handleInputChange}
-                            aria-describedby="nameError"
-                        />
-                        {errors.name && <span id="nameError" className="error-message">{errors.name}</span>}
-                    </div>
-                    <div className="input-container">
-                        <i className="fas fa-user-tag"></i>
-                        <input 
-                            type="text" 
-                            id="last-name" 
-                            name="lastName" 
-                            placeholder="Last Name"
-                            value={formData.lastName}
-                            onChange={handleInputChange}
-                            aria-describedby="lastNameError"
-                        />
-                        {errors.lastName && <span id="lastNameError" className="error-message">{errors.lastName}</span>}
-                    </div>
-                </div>
-                <div className="form-group">
-                    <div className="input-container">
-                        <i className="fas fa-phone-alt"></i>
-                        <input 
-                            type="tel" 
-                            id="phone" 
-                            name="phone" 
-                            placeholder="Phone"
-                            value={formData.phone}
-                            onChange={handleInputChange}
-                            aria-describedby="phoneError"
-                        />
-                        {errors.phone && <span id="phoneError" className="error-message">{errors.phone}</span>}
-                    </div>
-                    <div className="input-container">
-                        <i className="fas fa-envelope"></i>
-                        <input 
-                            type="email" 
-                            id="email" 
-                            name="email" 
-                            placeholder="Email"
-                            value={formData.email}
-                            onChange={handleInputChange}
-                            aria-describedby="emailError"
-                        />
-                        {errors.email && <span id="emailError" className="error-message">{errors.email}</span>}
-                    </div>
-                </div>
-                <div className="input-container full-width">
-                    <i className="fas fa-comment-alt"></i>
-                    <input 
-                        type="text" 
-                        id="message" 
-                        name="message" 
-                        placeholder="Message"
-                        value={formData.message}
-                        onChange={handleInputChange}
-                        aria-describedby="messageError"
-                    />
-                    {errors.message && <span id="messageError" className="error-message">{errors.message}</span>}
-                </div>
-                <Button text="Submit" />
-            </form>
-        </div>
-    );
+    const validateField = (input) => {
+      const error = input.parentElement.querySelector('.error-message');
+      const value = input.value.trim();
+
+      if (input.name === 'nombre') {
+        const soloLetras = /^[A-Za-zÁÉÍÓÚáéíóúÑñ\s]+$/;
+        if (!soloLetras.test(value)) {
+          input.classList.remove('is-valid');
+          input.classList.add('is-invalid');
+          if (error) error.textContent = 'Solo se permiten letras y espacios.';
+          return false;
+        }
+        if (value.length < 2) {
+          input.classList.remove('is-valid');
+          input.classList.add('is-invalid');
+          if (error) error.textContent = 'El nombre debe tener al menos 2 caracteres.';
+          return false;
+        }
+      }
+
+      if (input.name === 'telefono') {
+        const soloNumeros = /^\d{7,15}$/;
+        if (!soloNumeros.test(value)) {
+          input.classList.remove('is-valid');
+          input.classList.add('is-invalid');
+          if (error) error.textContent = 'Solo se permiten números (7 a 15 dígitos).';
+          return false;
+        }
+      }
+
+      if (input.name === 'email') {
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(value)) {
+          input.classList.remove('is-valid');
+          input.classList.add('is-invalid');
+          if (error) error.textContent = 'Ingresa un correo electrónico válido.';
+          return false;
+        }
+
+        if (!value.endsWith('.com')) {
+          input.classList.remove('is-valid');
+          input.classList.add('is-invalid');
+          if (error) error.textContent = 'El correo debe terminar en ".com".';
+          return false;
+        }
+      }
+
+      if (input.checkValidity()) {
+        input.classList.remove('is-invalid');
+        input.classList.add('is-valid');
+        if (error) error.textContent = '';
+        return true;
+      } else {
+        input.classList.remove('is-valid');
+        input.classList.add('is-invalid');
+        if (error) {
+          if (input.validity.valueMissing) {
+            error.textContent = 'Este campo es obligatorio.';
+          } else if (input.validity.typeMismatch) {
+            error.textContent = 'Por favor, introduce un valor válido.';
+          } else {
+            error.textContent = 'Valor inválido.';
+          }
+        }
+        return false;
+      }
+    };
+
+    window.changeLanguage = changeLanguage;
+    setupForm('contactForm', 'español');
+    setupForm('contactFormEn', 'english');
+  }, []);
+
+  const Input = ({ id, type, name, label, icon, required }) => (
+    <div className="relative input-group">
+      <div className="input-icon">{icon}</div>
+      <input
+        type={type}
+        id={id}
+        name={name}
+        className="peer"
+        placeholder=" "
+        required={required}
+      />
+      <label htmlFor={id}>{label}</label>
+      <span className="error-message"></span>
+    </div>
+  );
+
+  const Select = ({ id, name, label, options }) => (
+    <div className="relative input-group">
+      <div className="input-icon">⚙️</div>
+      <select id={id} name={name} required className="peer">
+        <option value="">--</option>
+        {options.map((opt) => (
+          <option key={opt} value={opt}>
+            {opt}
+          </option>
+        ))}
+      </select>
+      <label htmlFor={id}>{label}</label>
+      <span className="error-message"></span>
+    </div>
+  );
+
+  return (
+    <div className="contact-container">
+      <div className="language-selector">
+        <button
+          id="es-btn"
+          className="language-btn active"
+          onClick={() => window.changeLanguage('es')}
+        >
+          Español
+        </button>
+        <button
+          id="en-btn"
+          className="language-btn"
+          onClick={() => window.changeLanguage('en')}
+        >
+          English
+        </button>
+      </div>
+
+      <div id="es-content">
+        <h2>Solicitud de Servicio Eléctrico</h2>
+        <form id="contactForm" noValidate>
+          <Input
+            id="nombre"
+            type="text"
+            name="nombre"
+            label="Nombre completo"
+            icon="👤"
+            required
+          />
+          <Input
+            id="telefono"
+            type="tel"
+            name="telefono"
+            label="Teléfono"
+            icon="📞"
+            required
+          />
+          <Input
+            id="email"
+            type="email"
+            name="email"
+            label="Correo electrónico"
+            icon="✉️"
+            required
+          />
+          <Select
+            id="servicio"
+            name="servicio"
+            label="Tipo de servicio"
+            options={[
+              'Instalación eléctrica',
+              'Reparación',
+              'Mantenimiento',
+              'Consultoría',
+            ]}
+          />
+          <button type="submit" className="form-btn">
+            Enviar solicitud ✈️
+          </button>
+        </form>
+      </div>
+
+      <div id="en-content" style={{ display: 'none' }}>
+        <h2>Electrical Service Request</h2>
+        <form id="contactFormEn" noValidate>
+          <Input
+            id="nombre_en"
+            type="text"
+            name="nombre"
+            label="Full name"
+            icon="👤"
+            required
+          />
+          <Input
+            id="telefono_en"
+            type="tel"
+            name="telefono"
+            label="Phone"
+            icon="📞"
+            required
+          />
+          <Input
+            id="email_en"
+            type="email"
+            name="email"
+            label="Email"
+            icon="✉️"
+            required
+          />
+          <Select
+            id="servicio_en"
+            name="servicio"
+            label="Service type"
+            options={['Electrical installation', 'Repair', 'Maintenance', 'Consulting']}
+          />
+          <button type="submit" className="form-btn">
+            Submit Request ✈️
+          </button>
+        </form>
+      </div>
+    </div>
+  );
 };
 
 export default ContactFormComponent;
