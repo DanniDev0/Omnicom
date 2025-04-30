@@ -60,7 +60,7 @@ const ContactFormComponent = () => {
           idioma: langValue,
         };
 
-        const webhookUrl = 'PEGAR_AQUI_SU_URL_DE_WEBHOOK';
+        const webhookUrl = 'https://hook.us2.make.com/31hkdtykfxl8d9bletterm6975j7boto';
 
         fetch(webhookUrl, {
           method: 'POST',
