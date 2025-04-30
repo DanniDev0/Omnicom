@@ -48,10 +48,10 @@ export const Footer = () => {
             <a href="https://linkedin.com" className="social-link linkedin" target="_blank" rel="noopener noreferrer">
               <img src={Linkedin} alt="LinkedIn" className="social-icon" />
             </a>
-            <a href="https://Facebook.com" className="social-link facebook" target="_blank" rel="noopener noreferrer">
+            <a href="https://www.facebook.com/omnicomcr" className="social-link facebook" target="_blank" rel="noopener noreferrer">
               <img src={Facebook} alt="Facebook" className="social-icon" />
             </a>
-            <a href="https://Instagram.com" className="social-link instagram" target="_blank" rel="noopener noreferrer">
+            <a href="https://www.instagram.com/omnicom_cr" className="social-link instagram" target="_blank" rel="noopener noreferrer">
               <img src={Instagram} alt="Instagram" className="social-icon" />
             </a>
             <a href="https://X.com" className="social-link x" target="_blank" rel="noopener noreferrer">
