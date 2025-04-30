@@ -52,7 +52,6 @@ export const Header = () => {
                     <li><Link to="/About_us" onClick={closeMenu}>About Us</Link></li>
                     <li><Link to="/Services" onClick={closeMenu}>Services</Link></li>
                     <li><Link to="/Projects" onClick={closeMenu}>Projects</Link></li>
-                    <li><Link to="/Market_Analysis" onClick={closeMenu}>Market Analysis</Link></li>
                     <li><Link to="/Certificates" onClick={closeMenu}>Certificates</Link></li>
                     <li><Link to="/Contact_us" onClick={closeMenu}>Contact Us</Link></li>
                 </ul>
