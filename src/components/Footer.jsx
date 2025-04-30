@@ -45,9 +45,6 @@ export const Footer = () => {
           <p>Proudly SWaM certified, we deliver reliable, efficient, and sustainable solutions.
           📞 Contact us today to learn how we can help you!.</p>
           <div className="footer-social">
-            <a href="https://linkedin.com" className="social-link linkedin" target="_blank" rel="noopener noreferrer">
-              <img src={Linkedin} alt="LinkedIn" className="social-icon" />
-            </a>
             <a href="https://www.facebook.com/omnicomcr" className="social-link facebook" target="_blank" rel="noopener noreferrer">
               <img src={Facebook} alt="Facebook" className="social-icon" />
             </a>

@@ -49,12 +49,6 @@
     transition: transform 0.5s ease;
 }
 
-/* Efectos hover en redes sociales */
-.linkedin:hover {
-    transform: scale(1.1);
-    box-shadow: 0px 0px 20px rgba(10, 102, 194, 0.8);
-}
-
 .facebook:hover {
     transform: scale(1.1);
     box-shadow: 0px 0px 20px rgba(24, 119, 242, 0.8);
