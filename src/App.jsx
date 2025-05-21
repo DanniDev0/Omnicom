@@ -8,7 +8,6 @@ import { About_us } from './pages/About_us';
 import { Service } from './pages/Service';
 import { Projects } from './pages/Projects';
 import { Contact_us } from './pages/Contact_us';
-import { Certificates } from './pages/Certificates';
 import Error from './pages/Error';
 import NoInternet from './components/NoInternet';
 
@@ -38,7 +37,6 @@ function App() {
             <Route path="About_us" element={<About_us />} />
             <Route path="Services" element={<Service />} />
             <Route path="Projects" element={<Projects />} />
-            <Route path="Certificates" element={<Certificates />} />
             <Route path="Contact_us" element={<Contact_us />} />
           </Route>
         </Routes>
