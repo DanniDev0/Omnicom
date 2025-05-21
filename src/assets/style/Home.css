@@ -21,6 +21,35 @@
     margin-top: 20px;
 }
 
+.home-image-wrapper {
+    margin: 30px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 100%;
+}
+
+.home-image {
+    width: 100%;
+    max-width: 800px;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    animation: fadeInUp 1s ease-in-out;
+    transition: transform 0.3s ease;
+}
+
+.home-image:hover {
+    transform: scale(1.02);
+}
+
+@media (max-width: 768px) {
+    .home-image {
+        max-width: 90%;
+    }
+}
+
+
 @media (max-width: 1024px) {
     .typewriter {
         font-size: 1.8rem;

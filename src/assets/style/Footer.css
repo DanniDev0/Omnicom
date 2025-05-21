@@ -5,8 +5,8 @@
   --neon-pink-social: #e1306c;
   --neon-x-social: #000000;
 
-  --bg-darker: #1a1a2e;
-  --text-color-light: #f0f0f0;
+  --bg-darker: #111111;
+  --text-color-light: #ffffff;
 }
 
 .footer {
@@ -58,7 +58,6 @@
   transition: transform 0.3s ease;
   width: 100%;
   justify-content: flex-start;
-  
 }
 
 .footer-item .icon {
@@ -157,9 +156,14 @@
   text-align: center;
   margin-top: 40px;
   padding-top: 20px;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
   font-size: 0.9em;
-  color: rgba(255, 255, 255, 0.7);
+  color: var(--text-color-light); 
+}
+
+.footer,
+.footer * {
+  color: var(--text-color-light);
 }
 
 @media (max-width: 992px) {
