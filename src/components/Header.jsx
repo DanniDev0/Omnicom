@@ -50,7 +50,6 @@ export const Header = () => {
                 <ul className="nav-links">
                     <li><Link to="/" onClick={closeMenu}>Home</Link></li>
                     <li><Link to="/About_us" onClick={closeMenu}>About Us</Link></li>
-                    <li><Link to="/Services" onClick={closeMenu}>Services</Link></li>
                     <li><Link to="/Projects" onClick={closeMenu}>Projects</Link></li>
                     <li><Link to="/Contact_us" onClick={closeMenu}>Contact Us</Link></li>
                 </ul>

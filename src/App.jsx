@@ -5,7 +5,7 @@ import 'animate.css';
 import { Layout } from './pages/Layout';
 import { Home } from './pages/Home';
 import { About_us } from './pages/About_us';
-import { Service } from './pages/Service';
+
 import { Projects } from './pages/Projects';
 import { Contact_us } from './pages/Contact_us';
 import Error from './pages/Error';
@@ -35,7 +35,6 @@ function App() {
             <Route path="*" element={<Error />} />
             <Route path="/" element={<Home />} />
             <Route path="About_us" element={<About_us />} />
-            <Route path="Services" element={<Service />} />
             <Route path="Projects" element={<Projects />} />
             <Route path="Contact_us" element={<Contact_us />} />
           </Route>
