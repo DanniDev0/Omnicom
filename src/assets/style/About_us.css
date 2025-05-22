@@ -1,0 +1,8 @@
+.about-header-image {
+  width: 80%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  object-position: center;
+  margin: 0 auto;
+}
