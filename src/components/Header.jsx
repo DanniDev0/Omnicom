@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import '../assets/style/Header.css';
 import { Link } from 'react-router-dom';
-import logo from '../assets/img/logo.png';
+import logo from '../assets/img/logo.webp';
 
 export const Header = () => {
     const [isOpen, setIsOpen] = useState(false);
