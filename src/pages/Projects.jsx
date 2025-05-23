@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import '../assets/style/Projects.css';
 import Title from '../components/Title';
-import Titleh2 from '../components/Titleh2';
 import ButtonPrice from '../components/ButtonPrice';
 import { CardProjects } from '../components/CardProjects';
 import Project1 from '../assets/img/Project1.jpg';
@@ -32,7 +31,6 @@ export const Projects = () => {
         <section className="projects-section">
             <div className="projects-container">
                 <Title text="PROJECTS" />
-                <Titleh2 text="Electrical installation residential" />
                 <div className="projects-grid">
                     <CardProjects Image={Project1} description="Power Up with Confidence Expert installation and upgrades of electrical panels for safe and efficient energy distribution. Professional. Compliant. Guaranteed." onClick={() => openLightbox(Project1)} />
                     <CardProjects Image={Project2} description="Comfort and Style, Installed Right Ceiling fan installations that enhance airflow, lighting, and energy efficiency — done with precision and care." onClick={() => openLightbox(Project2)} />

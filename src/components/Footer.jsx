@@ -14,7 +14,6 @@ export const Footer = () => {
     <footer className="footer">
       <div className="footer-container">
 
-        {/* Contact Info */}
         <div className="footer-column">
           <h3>Contact</h3>
           <ul className="footer-list">
@@ -39,7 +38,6 @@ export const Footer = () => {
           </ul>
         </div>
 
-        {/* Social Links */}
         <div className="footer-column">
           <h3>Follow Us</h3>
           <div className="social-links">
@@ -55,7 +53,6 @@ export const Footer = () => {
           </div>
         </div>
 
-        {/* Certifications */}
         <div className="footer-column">
           <h3>Certifications</h3>
           <div className="certifications">

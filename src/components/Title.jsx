@@ -1,12 +1,11 @@
 import React from 'react';
-import '../assets/style/Title.css';
+import styles from '../assets/style/Title.module.css';
 
-export const Title = ({ text }) => {
-    return (
-        <h1 className="title-container animate__animated animate__pulse">
-            {text}
-        </h1>
-    );
-}
+const Title = ({ text }) => (
+  <div className={styles.wrapper}>
+    <h1 className={styles.title}>{text}</h1>
+    <div className={styles.underline}></div>
+  </div>
+);
 
 export default Title;
