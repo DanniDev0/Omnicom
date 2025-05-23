@@ -1,6 +1,5 @@
 import React from 'react';
 import '../assets/style/Footer.css';
-import '@fortawesome/fontawesome-free/css/all.min.css';
 import Facebook from '../assets/img/Facebook.png';
 import Instagram from '../assets/img/Instagram.png';
 import X from '../assets/img/X.png';
@@ -15,53 +14,53 @@ export const Footer = () => {
     <footer className="footer">
       <div className="footer-container">
 
-        <div className="footer-section">
-          <h3>Contact Us</h3>
-          <div className="contact-items-wrapper">
-            <div className="footer-item">
-              <i className="icon"><img src={Location} alt="Location" /></i>
-              <p>
-                <a
-                  href="https://www.google.com/maps?q=PO BOX 2734, WOODBRIDGE, VA, 22195"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="contact-link"
-                >
-                  PO BOX 2734, WOODBRIDGE, VA, 22195
-                </a>
-              </p>
-            </div>
-            <div className="footer-item">
-              <i className="icon"><img src={Phone} alt="Phone" /></i>
-              <p><a href="tel:+15712788712" className="contact-link">+1 5712788712</a></p>
-            </div>
-            <div className="footer-item">
-              <i className="icon"><img src={Email} alt="Email" /></i>
-              <p><a href="mailto:info@omnicomcr.com" className="contact-link">info@omnicomcr.com</a></p>
-            </div>
-          </div>
+        {/* Contact Info */}
+        <div className="footer-column">
+          <h3>Contact</h3>
+          <ul className="footer-list">
+            <li>
+              <img src={Location} alt="Location" className="footer-icon" />
+              <a
+                href="https://www.google.com/maps?q=PO BOX 2734, WOODBRIDGE, VA, 22195"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                PO BOX 2734, WOODBRIDGE, VA, 22195
+              </a>
+            </li>
+            <li>
+              <img src={Phone} alt="Phone" className="footer-icon" />
+              <a href="tel:+15712788712">+1 571-278-8712</a>
+            </li>
+            <li>
+              <img src={Email} alt="Email" className="footer-icon" />
+              <a href="mailto:info@omnicomcr.com">info@omnicomcr.com</a>
+            </li>
+          </ul>
         </div>
 
-        <div className="footer-section">
+        {/* Social Links */}
+        <div className="footer-column">
           <h3>Follow Us</h3>
-          <div className="social-icons">
-            <a href="https://www.facebook.com/omnicomcr" className="social-icon-link facebook-neon" target="_blank" rel="noopener noreferrer">
+          <div className="social-links">
+            <a href="https://www.facebook.com/omnicomcr" target="_blank" rel="noopener noreferrer">
               <img src={Facebook} alt="Facebook" />
             </a>
-            <a href="https://www.instagram.com/omnicom_cr" className="social-icon-link instagram-neon" target="_blank" rel="noopener noreferrer">
+            <a href="https://www.instagram.com/omnicom_cr" target="_blank" rel="noopener noreferrer">
               <img src={Instagram} alt="Instagram" />
             </a>
-            <a href="https://x.com" className="social-icon-link x-neon" target="_blank" rel="noopener noreferrer">
+            <a href="https://x.com" target="_blank" rel="noopener noreferrer">
               <img src={X} alt="X" />
             </a>
           </div>
         </div>
 
-        <div className="footer-section">
-          <h3>Certificates</h3>
-          <div className="certifications-images">
-            <img src={NMSDC} alt="NMSDC Certificate" className="certification-img neon-border" />
-            <img src={SWaM} alt="SWaM Certificate" className="certification-img neon-border" />
+        {/* Certifications */}
+        <div className="footer-column">
+          <h3>Certifications</h3>
+          <div className="certifications">
+            <img src={NMSDC} alt="NMSDC Certificate" />
+            <img src={SWaM} alt="SWaM Certificate" />
           </div>
         </div>
       </div>
