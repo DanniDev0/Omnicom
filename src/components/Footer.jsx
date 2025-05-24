@@ -28,8 +28,13 @@ export const Footer = () => {
             </li>
             <li>
               <img src={Phone} alt="Phone" className="footer-icon" />
-              <a href="tel:+15712788712">+1 571-278-8712</a>
+              <div>
+                <a href="tel:+15713002744">+1 571-300-2744</a>
+                <br />
+                <a href="tel:+15712788712">+1 571-278-8712</a>
+              </div>
             </li>
+
             <li>
               <img src={Email} alt="Email" className="footer-icon" />
               <a href="mailto:info@omnicomcr.com">info@omnicomcr.com</a>
@@ -78,6 +83,15 @@ export const Footer = () => {
               <img src={SWaM} alt="SWaM Certificate" />
             </a>
           </div>
+          <p className="cert-description">
+            • The <strong>NMSDC Capital Readiness Program Graduate</strong>{" "}
+            highlights our readiness to access capital, grow strategically, and
+            connect with corporate and government opportunities.
+            <br />• The <strong>SWaM Certification</strong> officially
+            recognizes us as a minority-owned small business, opening doors to
+            exclusive procurement programs, state contracts, and networking
+            opportunities in Virginia.
+          </p>
         </div>
       </div>
 
