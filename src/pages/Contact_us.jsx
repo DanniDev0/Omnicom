@@ -6,15 +6,13 @@ import ContactFormComponent from "../components/ContactFormComponent";
 
 export const Contact_us = () => {
   return (
-    <div>
-      <section className="animate-container">
-        <Title text="CONTACT US" />
-        <div className="container">
-          <MapComponent />
-          <ContactFormComponent />
-        </div>
-      </section>
-    </div>
+    <section className="animate-container">
+      <Title text="CONTACT US" />
+      <div className="container">
+        <MapComponent />
+        <ContactFormComponent />
+      </div>
+    </section>
   );
 };
 

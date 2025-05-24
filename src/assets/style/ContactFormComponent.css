@@ -1,5 +1,7 @@
 .contact-container {
-  max-width: 700px;
+  width: 100%;
+  max-width: 600px;
+  height: auto; 
   margin: auto;
   padding: 2rem;
   background: rgba(255, 255, 255, 0.15);
@@ -7,64 +9,64 @@
   backdrop-filter: blur(8px);
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
   border: 1px solid rgba(255, 255, 255, 0.18);
+  box-sizing: border-box;
 }
+
 
 .language-selector {
   display: flex;
   justify-content: center;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.2rem;
 }
 
 .language-btn {
   padding: 8px 16px;
-  margin: 0 0.5rem;
-  border: none;
-  border-radius: 6px;
-  background-color: #ddd;
+  margin: 0 0.3rem;
+  border-radius: 8px;
+  background-color: #e8f0fe;
   cursor: pointer;
-  font-weight: 500;
-  transition: 0.3s;
+  font-weight: 600;
+  transition: all 0.3s ease;
 }
 
 .language-btn.active,
 .language-btn:hover {
-  background-color: #3b82f6;
-  color: white;
+  background-color: #1d4ed8;
+  color: #fff;
 }
 
 h2 {
   text-align: center;
-  font-size: 1.5rem;
-  font-weight: bold;
-  margin-bottom: 1rem;
-  color: #333;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #111827;
+  margin-bottom: 1.5rem;
 }
 
 .input-group {
   position: relative;
-  margin-bottom: 2.5rem;
+  margin-bottom: 2rem;
 }
 
 .input-group input,
 .input-group select {
   width: 100%;
-  padding: 1rem 1rem 0.5rem 2.5rem;
+  padding: 1.2rem 1rem 0.7rem 3rem;
   font-size: 1rem;
-  border: 1px solid #ccc;
-  border-radius: 0.5rem;
-  background-color: transparent;
-  color: #000;
-  appearance: none;
-  transition: border-color 0.3s ease;
+  border-radius: 12px;
+  background-color: rgba(255,255,255,0.9);
+  color: #111827;
+  border: 1px solid #d1d5db;
+  transition: border-color 0.3s, box-shadow 0.3s;
 }
 
 .input-group select {
-  padding-right: 1.5rem;
+  cursor: pointer;
 }
 
 input.is-valid,
 select.is-valid {
-  border-color: #22c55e; 
+  border-color: #10b981;
 }
 
 input.is-invalid,
@@ -74,36 +76,30 @@ select.is-invalid {
 
 .error-message {
   position: absolute;
-  bottom: -1.2rem;
-  left: 2.5rem;
-  font-size: 0.75rem;
+  bottom: -1.4rem;
+  left: 3rem;
+  font-size: 0.7rem;
   color: #ef4444;
-  background: #fff;
-  padding: 0 0.25rem;
-  z-index: 10;
-  pointer-events: none;
+  background-color: #fff;
+  padding: 0 4px;
 }
-
 
 .input-icon {
   position: absolute;
   top: 50%;
-  left: 0.75rem;
+  left: 1rem;
   transform: translateY(-50%);
-  font-size: 1.1rem;
-  color: #888;
-  pointer-events: none;
+  font-size: 1.3rem;
+  color: #4b5563;
 }
 
 .input-group label {
   position: absolute;
-  top: 1rem;
-  left: 2.5rem;
-  font-size: 0.875rem;
-  color: #666;
-  background-color: white;
-  padding: 0 0.25rem;
-  transition: 0.2s ease all;
+  top: 1.1rem;
+  left: 3rem;
+  font-size: 0.9rem;
+  color: #6b7280;
+  transition: all 0.2s ease;
   pointer-events: none;
 }
 
@@ -111,26 +107,33 @@ select.is-invalid {
 .input-group input:not(:placeholder-shown) ~ label,
 .input-group select:focus ~ label,
 .input-group select:not([value=""]) ~ label {
-  top: 0.2rem;
-  left: 2.5rem;
-  font-size: 0.75rem;
-  color: #3b82f6;
+  top: 0.3rem;
+  font-size: 0.7rem;
+  color: #1d4ed8;
 }
 
 .form-btn {
-  display: block;
-  width: 100%;
-  padding: 0.75rem 1rem;
+  width: 40%;
+  padding: 0.8rem;
   font-size: 1rem;
-  font-weight: 600;
-  color: white;
-  background-color: #3b82f6;
-  border: none;
-  border-radius: 0.5rem;
+  font-weight: 700;
+  background-color: #2563eb;
+  color: #fff;
+  border-radius: 12px;
   cursor: pointer;
-  transition: background 0.3s ease;
+  transition: transform 0.3s, background-color 0.3s, box-shadow 0.3s;
+  box-shadow: 0 4px 14px rgba(37, 99, 235, 0.4);
+  border: none;
 }
 
 .form-btn:hover {
-  background-color: #2563eb;
+  transform: translateY(-3px);
+  background-color: #1e40af;
+  box-shadow: 0 6px 20px rgba(37, 99, 235, 0.5);
+}
+
+@media (max-width: 650px) {
+  .contact-container {
+    width: 100%;
+  }
 }
