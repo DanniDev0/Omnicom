@@ -6,8 +6,10 @@ const CallToAction = () => {
   const navigate = useNavigate();
 
   return (
-    <section className={styles.cta}>
-      <p className={styles.phone}>Call Us <strong>571-300-2744</strong></p>
+     <section className={styles.cta}>
+      <p className={styles.phone}>
+        Call Us: <strong>(571) 300-2744</strong> or <strong>(571) 278-8712</strong>
+      </p>
       <button className={styles.button} onClick={() => navigate('/contact_us')}>
         Get a Quote
       </button>
